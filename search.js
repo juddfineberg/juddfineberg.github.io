@@ -1,25 +1,31 @@
-jQuery(document).ready(function() { handleSearchBox() } );
+$(function() {
+  var sports = function(data) {
+    console.log(data);
 
-function updateScreen(data) {
-  window.movie = data.responseJSON;
+    // Put your code here to change the "markup" variable.
+    // Don't change any other code in this file. You will be sad.
 
-  // Do not change code above this line or you will be sad
-  // YOUR CODE GOES HERE
+    // var markup = "The weather report... " + "will be here when I finish my homework.";
+    var sports =  data.daily.summary;
+
+    $('.sports').html();
 
 
+    // End of your code
 
-  // Do not change code below this line or you will be sad
-}
 
-function getMovieData(title) {
-  url = "https://omdbapi.com/?t=" + title + "&plot=full&r=json"
-  $.ajax({url: url, type: "GET", complete: updateScreen});
-}
-
-function handleSearchBox() {
-  $("form").submit(function(e) {
-    e.preventDefault();
-    search_term = $("input").val()
-    getMovieData(search_term)
-  })
-}
+    // $('.weather-report').html(markup);
+  }
+  $('a.get-sports-scores').on('click', function(event) {
+    event.preventDefault();
+    $.ajax({
+      type: 'GET',
+      // url: 'https://api.forecast.io/forecast/6dbe98374cc5b8f9ea63d5ec73de9c04/42.056459,-87.675267?callback=?',
+      url: 'http://api.cbssports.com/fantasy/sports?version=3.0',
+'
+      dataType: 'jsonp',
+      contentType: "application/json",
+      success: handleSports
+    });
+  });
+});

@@ -4,7 +4,7 @@
 $(document).ready(function() {
   $(".btn").on("click", addPlayer);
   $(".link-delete").on("click", deletePlayer);
-  $("ul").on("click", ".link-delete", deletePlayer);
+  $("ol").on("click", ".link-delete", deletePlayer);
 });
 
 // This function prompts the user for a to-do player
@@ -14,8 +14,8 @@ function addPlayer() {
   var text = window.prompt("Add Player");
   var delete_link = '<a href="#" class="link-delete">(Delete)</a>'
   console.log("Yup!");
-  $('ul').append("<ul>" + text + " " + delete_link + "</ul>");
-  var numplayers = $("ul").length;
+  $('ol').append("<ol>" + text + " " + delete_link + "</ol>");
+  var numplayers = $("li").length;
 
   // Challenge: Differentiate between 1 player vs. more players
   if (numplayers == 1) {
