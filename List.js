@@ -3,7 +3,7 @@
 // so this it is prepared to react to user events.
 $(document).ready(function() {
   $(".btn").on("click", addPlayer);
-  $(".link-delete").on("click", deletePlayer);
+  // $(".link-delete").on("click", deletePlayer);
   $("ol").on("click", ".link-delete", deletePlayer);
 });
 
@@ -13,8 +13,8 @@ $(document).ready(function() {
 function addPlayer() {
   var text = window.prompt("Add Player");
   var delete_link = '<a href="#" class="link-delete">(Delete)</a>'
-  console.log("Yup!");
-  $('ol').append("<ol>" + text + " " + delete_link + "</ol>");
+  // console.log("Yup!");
+  $('ol').append("<li>" + text + " " + delete_link + "</li>");
   var numplayers = $("li").length;
 
   // Challenge: Differentiate between 1 player vs. more players
@@ -29,9 +29,9 @@ function addPlayer() {
 // This function deletes an player from the list.
 // The "event" parameter holds information on which
 // player the user wishes to remove.
-function deleteplayer(event) {
+function deletePlayer(event) {
   console.info(event);
-  $(event.target).remove();
-  $(event.target).parent().fadeOut();
+  // $(event.target).remove();
+  $(event.target).parent().remove();
 
 }

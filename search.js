@@ -10,7 +10,31 @@ $(function() {
 
     $('.sports').html();
 
-
+    {
+       "body" : {
+          "sports" : [
+             {
+                "name" : "Baseball",
+                "pro_abbrev" : "MLB",
+                "id" : "baseball"
+             },
+             {
+                "name" : "Football",
+                "pro_abbrev" : "NFL",
+                "id" : "football"
+             },
+             {
+                "name" : "Basketball",
+                "pro_abbrev" : "NBA",
+                "id" : "basketball"
+             },
+          ]
+       },
+       "uriAlias" : "/sports",
+       "statusMessage" : "OK",
+       "uri" : "/sports",
+       "statusCode" : 200
+    }
     // End of your code
 
 
